@@ -8,7 +8,14 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="container" >  
+  <body class="container" > 
+    <!--Navbar para ingresar a las paginas--> 
+    <nav class="navbar navbar-light bg-light">
+      <form class="form-inline">
+        <button class="btn btn-outline-success" type="button"><%= link_to 'POST', post_index_path  %></button>
+        <button class="btn btn-outline-success" type="button"><%= link_to 'CREAR POST', post_dashboard_path  %></button>
+      </form>
+    </nav>
     <%= yield %>
   </body>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
