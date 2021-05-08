@@ -1,2 +1,17 @@
-<h1>Post#create</h1>
-<p>Find me in app/views/post/create.html.erb</p>
+<!-- @user es una variable = a todos los datos que pasamos al metodo, definida en el controlador pages-->
+<% if @post.errors.any? %>
+    <div id="error_explanation">
+        <h2>
+            <%= pluralize(@post.errors.count, "error") %>
+            prohibited this user from being saved:
+        </h2>
+
+        <ul>
+            <% @post.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+<% else %> <!--el else es para mostrar el mensaje de error o el registro con exito-->
+    <h1> POST CREADO CON EXITO </h1>
+<% end %>
